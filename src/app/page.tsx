@@ -133,7 +133,7 @@ export default function Home() {
       <section>
         <H2 id="past-talks">Past Talks</H2>
         {/* <PastTalkDate /> */}
-        <TalkCard />
+        <PastTalkList />
       </section>
     </main>
   );
@@ -150,6 +150,9 @@ const PastTalkDateContainer = styled.div`
   text-transform: uppercase;
   gap: 0.25rem;
   border-radius: 0.25rem;
+  position: absolute;
+  left: 0px;
+  transform: translateX(-100%);
 
   p:nth-child(2) {
     font-size: 2.25rem;
@@ -223,32 +226,101 @@ const AuthorContainer = styled.div`
 const AuthorDetails = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 const TalkCardContainer = styled.div`
   width: 445px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 10px;
 
   h3 {
     font-size: 28px;
   }
 `;
 
-function TalkCard() {
-  const talk = {
-    cover:
-      "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-    title: "Qwik - A Zero JS Resumable Framework",
-    authorId: "ragavkumarv",
-    references: [
-      { type: "video", icon: "youtube", link: "" },
-      { type: "slide", icon: "slide", link: "" },
-      { type: "code", icon: "github", link: "" },
-    ],
-  };
+const PastTalkListContainer = styled.div`
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(445px, 1fr)); */
 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 3rem;
+  position: relative;
+`;
+
+function PastTalkList() {
+  const talks = [
+    {
+      cover:
+        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+      title: "Qwik - A Zero JS Resumable Framework",
+      authorId: "ragavkumarv",
+      references: [
+        { type: "video", icon: "youtube", link: "" },
+        { type: "slide", icon: "slide", link: "" },
+        { type: "code", icon: "github", link: "" },
+      ],
+    },
+    {
+      cover:
+        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+      title: "Qwik - A Zero JS Resumable Framework",
+      authorId: "ragavkumarv",
+      references: [
+        { type: "video", icon: "youtube", link: "" },
+        { type: "slide", icon: "slide", link: "" },
+        { type: "code", icon: "github", link: "" },
+      ],
+    },
+    {
+      cover:
+        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+      title: "Qwik - A Zero JS Resumable Framework",
+      authorId: "ragavkumarv",
+      references: [
+        { type: "video", icon: "youtube", link: "" },
+        { type: "slide", icon: "slide", link: "" },
+        { type: "code", icon: "github", link: "" },
+      ],
+    },
+    {
+      cover:
+        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+      title: "Qwik - A Zero JS Resumable Framework",
+      authorId: "ragavkumarv",
+      references: [
+        { type: "video", icon: "youtube", link: "" },
+        { type: "slide", icon: "slide", link: "" },
+        { type: "code", icon: "github", link: "" },
+      ],
+    },
+    {
+      cover:
+        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+      title: "Qwik - A Zero JS Resumable Framework",
+      authorId: "ragavkumarv",
+      references: [
+        { type: "video", icon: "youtube", link: "" },
+        { type: "slide", icon: "slide", link: "" },
+        { type: "code", icon: "github", link: "" },
+      ],
+    },
+  ];
+
+  return (
+    <PastTalkListContainer>
+      <PastTalkDate />
+      {talks.map((talk, index) => (
+        <TalkCard key={index} talk={talk} />
+      ))}
+    </PastTalkListContainer>
+  );
+}
+
+function TalkCard({ talk }) {
   const author = AUTHORS.find(
     (author) => author.id === talk.authorId
   ) as Author;
