@@ -15,6 +15,9 @@ import { ShareSocialLinks } from "./ShareSocialLinks";
 import IconButton from "@mui/material/IconButton";
 import NextImage, { ImageProps } from "next/image";
 import { groupBy } from "ramda";
+import pastTalks from "./past-talks.json";
+import upcomingTalks from "./upcoming-talks.json";
+import speakersData from "./speakers.json";
 
 const DATE_FORMAT = "MMM d yyyy";
 export const dateFormatter = (date: string) => {
@@ -128,13 +131,14 @@ export default function Home() {
       <Spacer4 />
       <section>
         <H2>Topics</H2>
+        <PastTalkList talkList={upcomingTalks} />
         <UpcomingRegistration />
       </section>
       <Spacer4 />
       <section>
         <H2 id="past-talks">Past Talks</H2>
         {/* <PastTalkDate /> */}
-        <PastTalkList />
+        <PastTalkList talkList={pastTalks} />
       </section>
     </main>
   );
@@ -172,7 +176,7 @@ function PastTalkDate({ date }) {
   );
 }
 
-export interface Author {
+export interface Speaker {
   id: string;
   name: string;
   pic: string;
@@ -184,23 +188,13 @@ export interface Social {
   linkendIn: string;
 }
 
-const AUTHORS: Author[] = [
-  {
-    id: "ragavkumarv",
-    name: "Ragav Kumar V",
-    pic: "https://ik.imagekit.io/ragavkumarv/tr:450/potraits/ragavkumarv-coat-clean-high-res-touch-pos-sm.png",
-    social: {
-      twitter: "ragavkumarv",
-      linkendIn: "ragavkumarv",
-    },
-  },
-];
+const SPEAKERS: Speaker[] = speakersData;
 
 const TalkCover = styled(NextImage)`
   object-fit: cover;
 `;
 
-const AuthorPic = styled.img`
+const SpeakerPic = styled.img`
   height: 78px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -221,7 +215,7 @@ const SocialContainer = styled.div`
   }
 `;
 
-const AuthorContainer = styled.div`
+const SpeakerContainer = styled.div`
   display: flex;
   gap: 1rem;
 
@@ -234,7 +228,7 @@ const AuthorContainer = styled.div`
   }
 `;
 
-const AuthorDetails = styled.div`
+const SpeakerDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -263,69 +257,8 @@ const PastTalkListContainer = styled.div`
   margin: 3rem 0px;
 `;
 
-function PastTalkList() {
-  const talks = [
-    {
-      // cover:
-      // "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-      title: "Qwik - A Zero JS Resumable Framework",
-      authorId: "ragavkumarv",
-      references: [
-        { type: "video", icon: "youtube", link: "" },
-        { type: "slide", icon: "slide", link: "" },
-        { type: "code", icon: "github", link: "" },
-      ],
-      date: "21/01/2023",
-    },
-    {
-      cover:
-        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-      title: "Qwik - A Zero JS Resumable Framework",
-      authorId: "ragavkumarv",
-      references: [
-        { type: "video", icon: "youtube", link: "" },
-        { type: "slide", icon: "slide", link: "" },
-        { type: "code", icon: "github", link: "" },
-      ],
-      date: "21/01/2023",
-    },
-    {
-      cover:
-        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-      title: "Qwik - A Zero JS Resumable Framework",
-      authorId: "ragavkumarv",
-      references: [
-        { type: "video", icon: "youtube", link: "" },
-        { type: "slide", icon: "slide", link: "" },
-        { type: "code", icon: "github", link: "" },
-      ],
-      date: "21/01/2023",
-    },
-    {
-      cover:
-        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-      title: "Qwik - A Zero JS Resumable Framework",
-      authorId: "ragavkumarv",
-      references: [
-        { type: "video", icon: "youtube", link: "" },
-        { type: "slide", icon: "slide", link: "" },
-        { type: "code", icon: "github", link: "" },
-      ],
-      date: "28/10/2022",
-    },
-    {
-      cover:
-        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-      title: "Qwik - A Zero JS Resumable Framework",
-      authorId: "ragavkumarv",
-      references: [
-        { type: "video", icon: "youtube", link: "" },
-        { type: "slide", icon: "slide", link: "" },
-        { type: "code", icon: "github", link: "" },
-      ],
-      date: "28/10/2022",
-    },
-  ];
+function PastTalkList({ talkList }) {
+  const talks = talkList;
 
   let talksDateGrouped = groupBy((data) => data.date)(talks);
 
@@ -346,9 +279,9 @@ function PastTalkList() {
 }
 
 function TalkCard({ talk }) {
-  const author = AUTHORS.find(
+  const author = SPEAKERS.find(
     (author) => author.id === talk.authorId
-  ) as Author;
+  ) as Speaker;
   return (
     <TalkCardContainer>
       {talk.cover && (
@@ -368,16 +301,16 @@ function TalkCard({ talk }) {
         ))}
       </SocialContainer>
       <h3>{talk.title}</h3>
-      <AuthorContainer>
-        <AuthorPic src={author.pic} alt={author.name} />
-        <AuthorDetails>
+      <SpeakerContainer>
+        <SpeakerPic src={author.pic} alt={author.name} />
+        <SpeakerDetails>
           <p>{author.name}</p>
           <SocialContainer>
             <a href={author.social.twitter}>{ShareSocialLinks.twitter}</a>
             <a href={author.social.linkendIn}>{ShareSocialLinks.linkendIn}</a>
           </SocialContainer>
-        </AuthorDetails>
-      </AuthorContainer>
+        </SpeakerDetails>
+      </SpeakerContainer>
     </TalkCardContainer>
   );
 }

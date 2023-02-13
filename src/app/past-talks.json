@@ -1,0 +1,55 @@
+[
+  {
+    "title": "Qwik - A Zero JS Resumable Framework",
+    "authorId": "ragavkumarv",
+    "references": [
+      { "type": "video", "icon": "youtube", "link": "" },
+      { "type": "slide", "icon": "slide", "link": "" },
+      { "type": "code", "icon": "github", "link": "" }
+    ],
+    "date": "21/01/2023"
+  },
+  {
+    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+    "title": "Qwik - A Zero JS Resumable Framework",
+    "authorId": "ragavkumarv",
+    "references": [
+      { "type": "video", "icon": "youtube", "link": "" },
+      { "type": "code", "icon": "github", "link": "" }
+    ],
+    "date": "21/01/2023"
+  },
+  {
+    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+    "title": "Qwik - A Zero JS Resumable Framework",
+    "authorId": "ragavkumarv",
+    "references": [
+      { "type": "video", "icon": "youtube", "link": "" },
+      { "type": "slide", "icon": "slide", "link": "" },
+      { "type": "code", "icon": "github", "link": "" }
+    ],
+    "date": "21/01/2023"
+  },
+  {
+    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+    "title": "Qwik - A Zero JS Resumable Framework",
+    "authorId": "ragavkumarv",
+    "references": [
+      { "type": "video", "icon": "youtube", "link": "" },
+      { "type": "slide", "icon": "slide", "link": "" },
+      { "type": "code", "icon": "github", "link": "" }
+    ],
+    "date": "28/10/2022"
+  },
+  {
+    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+    "title": "Qwik - A Zero JS Resumable Framework",
+    "authorId": "ragavkumarv",
+    "references": [
+      { "type": "video", "icon": "youtube", "link": "" },
+      { "type": "slide", "icon": "slide", "link": "" },
+      { "type": "code", "icon": "github", "link": "" }
+    ],
+    "date": "28/10/2022"
+  }
+]
