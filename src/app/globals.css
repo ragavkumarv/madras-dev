@@ -4,6 +4,10 @@
   --content-size: min(calc(100% - 2rem), 73rem);
   --ff-sans-serif: "Proxima Nova", "sans-serif";
   --primary-clr: hsl(248, 31%, 20%);
+  --secondary-clr: hsl(180, 50%, 82%);
+  --accent-clr: hsl(35, 100%, 61%);
+  --ref-icon-clr: hsl(355, 67%, 48%);
+  --share-icons-clr: var(--accent-clr);
 }
 
 body {
