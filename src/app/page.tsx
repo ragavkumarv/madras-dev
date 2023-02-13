@@ -14,6 +14,7 @@ import { format, parse } from "date-fns";
 import { ShareSocialLinks } from "./ShareSocialLinks";
 import IconButton from "@mui/material/IconButton";
 import NextImage, { ImageProps } from "next/image";
+import { groupBy } from "ramda";
 
 const DATE_FORMAT = "MMM d yyyy";
 export const dateFormatter = (date: string) => {
@@ -315,21 +316,21 @@ function PastTalkList() {
     },
   ];
 
-  let oldDate = "";
+  let talksDateGrouped = groupBy((data) => data.date)(talks);
+
+  // console.log("***", talksDateGrouped);
 
   return (
-    <PastTalkListContainer>
-      {talks.map((talk, index) => {
-        const ifDateCard = oldDate !== talk.date;
-        oldDate = talk.date;
-        return (
-          <>
-            {ifDateCard && <PastTalkDate date={talk.date} />}
+    <>
+      {Object.keys(talksDateGrouped).map((date, index) => (
+        <PastTalkListContainer key={index}>
+          <PastTalkDate date={date} />
+          {talksDateGrouped[date].map((talk, index) => (
             <TalkCard key={index} talk={talk} />
-          </>
-        );
-      })}
-    </PastTalkListContainer>
+          ))}
+        </PastTalkListContainer>
+      ))}
+    </>
   );
 }
 
