@@ -3,6 +3,17 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 import Box from "@mui/material/Box";
+import { createTheme } from "@mui/material/styles";
+import { orange, yellow } from "@mui/material/colors";
+import { PrimaryButton } from "./PrimaryButton";
+
+export const theme = createTheme({
+  palette: {
+    primary: {
+      main: yellow[600],
+    },
+  },
+});
 
 const NavContainer = styled.nav`
   display: flex;
@@ -15,7 +26,7 @@ const NavContainer = styled.nav`
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.5rem;
     padding: 1.5rem 0;
     font-size: 1.25rem;
     font-family: var(--ff-sans-serif);
@@ -35,11 +46,11 @@ const NavContainer = styled.nav`
 export const Navigation = () => {
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Upcoming", path: "/" },
-    { name: "Past", path: "/" },
-    { name: "Speakers", path: "/" },
-    { name: "Organisers", path: "/" },
-    { name: "Join Us", path: "/" },
+    { name: "Upcoming", path: "/#upcoming-talks" },
+    { name: "Past", path: "/#past-talks" },
+    { name: "Speakers", path: "/#speakers" },
+    { name: "Organisers", path: "/#organisers" },
+    // { name: "Join Us", path: "/#join" },
   ];
 
   return (
@@ -58,9 +69,13 @@ export const Navigation = () => {
               component={"li"}
               //   sx={{ display: { xs: "none", md: "block" } }}
             >
-              <Link href={item.path}>{item.name}</Link>
+              <a href={item.path}>{item.name}</a>
             </Box>
           ))}
+
+          <li>
+            <PrimaryButton>Join Us</PrimaryButton>
+          </li>
         </ul>
       </NavContainer>
     </>
