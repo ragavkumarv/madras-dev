@@ -160,8 +160,8 @@ const PastTalkDateContainer = styled.div`
   }
 `;
 
-function PastTalkDate() {
-  const pastDate = dateFormatter("26/01/2023");
+function PastTalkDate({ date }) {
+  const pastDate = dateFormatter(date);
   return (
     <PastTalkDateContainer>
       <p>{pastDate.month}</p>
@@ -263,6 +263,7 @@ function PastTalkList() {
         { type: "slide", icon: "slide", link: "" },
         { type: "code", icon: "github", link: "" },
       ],
+      date: "21/01/2023",
     },
     {
       cover:
@@ -274,6 +275,7 @@ function PastTalkList() {
         { type: "slide", icon: "slide", link: "" },
         { type: "code", icon: "github", link: "" },
       ],
+      date: "21/01/2023",
     },
     {
       cover:
@@ -285,6 +287,7 @@ function PastTalkList() {
         { type: "slide", icon: "slide", link: "" },
         { type: "code", icon: "github", link: "" },
       ],
+      date: "21/01/2023",
     },
     {
       cover:
@@ -296,6 +299,7 @@ function PastTalkList() {
         { type: "slide", icon: "slide", link: "" },
         { type: "code", icon: "github", link: "" },
       ],
+      date: "28/10/2022",
     },
     {
       cover:
@@ -307,15 +311,24 @@ function PastTalkList() {
         { type: "slide", icon: "slide", link: "" },
         { type: "code", icon: "github", link: "" },
       ],
+      date: "28/10/2022",
     },
   ];
 
+  let oldDate = "";
+
   return (
     <PastTalkListContainer>
-      <PastTalkDate />
-      {talks.map((talk, index) => (
-        <TalkCard key={index} talk={talk} />
-      ))}
+      {talks.map((talk, index) => {
+        const ifDateCard = oldDate !== talk.date;
+        oldDate = talk.date;
+        return (
+          <>
+            {ifDateCard && <PastTalkDate date={talk.date} />}
+            <TalkCard key={index} talk={talk} />
+          </>
+        );
+      })}
     </PastTalkListContainer>
   );
 }
