@@ -153,7 +153,7 @@ const PastTalkDateContainer = styled.div`
   border-radius: 0.25rem;
   position: absolute;
   left: 0px;
-  transform: translateX(-100%);
+  transform: translateX(calc(-100% - 1rem));
 
   p:nth-child(2) {
     font-size: 2.25rem;
@@ -209,8 +209,14 @@ const AuthorPic = styled.img`
 
 const SocialContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  align-items: center;
+
   svg {
+    height: 32px;
+  }
+
+  .youtube-icon svg {
     height: 28px;
   }
 `;
@@ -221,6 +227,10 @@ const AuthorContainer = styled.div`
 
   p {
     font-size: 24px;
+  }
+
+  svg {
+    height: 24px;
   }
 `;
 
@@ -242,21 +252,22 @@ const TalkCardContainer = styled.div`
 `;
 
 const PastTalkListContainer = styled.div`
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(445px, 1fr)); */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(445px, 1fr));
 
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   gap: 1rem;
   row-gap: 3rem;
   position: relative;
+  margin: 3rem 0px;
 `;
 
 function PastTalkList() {
   const talks = [
     {
-      cover:
-        "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
+      // cover:
+      // "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
       title: "Qwik - A Zero JS Resumable Framework",
       authorId: "ragavkumarv",
       references: [
@@ -340,16 +351,18 @@ function TalkCard({ talk }) {
   ) as Author;
   return (
     <TalkCardContainer>
-      <TalkCover
-        src={talk.cover}
-        alt={talk.title}
-        quality={100}
-        height="243"
-        width="445"
-      />
+      {talk.cover && (
+        <TalkCover
+          src={talk.cover}
+          alt={talk.title}
+          quality={100}
+          height="243"
+          width="445"
+        />
+      )}
       <SocialContainer>
         {talk.references.map((tk, index) => (
-          <a key={index} href={tk.link}>
+          <a key={index} href={tk.link} className={`${tk.icon}-icon`}>
             {ShareSocialLinks[tk.icon]}
           </a>
         ))}
