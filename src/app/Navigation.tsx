@@ -45,12 +45,11 @@ const NavContainer = styled.nav`
 
 export const Navigation = () => {
   const navItems = [
-    { name: "Home", path: "/" },
+    { name: "Home", path: "/#" },
     { name: "Upcoming", path: "/#upcoming-talks" },
     { name: "Past", path: "/#past-talks" },
-    { name: "Speakers", path: "/#speakers" },
-    { name: "Organisers", path: "/#organisers" },
-    // { name: "Join Us", path: "/#join" },
+    // { name: "Speakers", path: "/#speakers" },
+    // { name: "Organisers", path: "/#organisers" },
   ];
 
   return (
