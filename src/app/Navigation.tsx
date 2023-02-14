@@ -36,7 +36,7 @@ const NavContainer = styled.nav`
 
 export const Navigation = () => {
   const navItems = [
-    { name: "Home", path: "/#" },
+    // { name: "Home", path: "/#" },
     { name: "Upcoming", path: "/#upcoming-talks" },
     { name: "Past", path: "/#past-talks" },
     // { name: "Speakers", path: "/#speakers" },

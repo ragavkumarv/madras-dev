@@ -33,7 +33,7 @@ export enum Type {
 const PastTalkListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(445px, 1fr));
-
+  justify-items: center;
   /* display: flex;
   flex-wrap: wrap; */
   gap: 1rem;

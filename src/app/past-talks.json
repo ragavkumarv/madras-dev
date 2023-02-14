@@ -1,55 +1,68 @@
 [
   {
+    "cover": "https://ik.imagekit.io/ragavkumarv/chennai-dev/qwik-a-zero-js-resumable-framework.png",
     "title": "Qwik - A Zero JS Resumable Framework",
     "authorId": "ragavkumarv",
+    "references": [],
+    "date": "21/01/2023"
+  },
+  {
+    "cover": "https://ik.imagekit.io/ragavkumarv/chennai-dev/how-to-use-mongo-db-as-a-graph-database.png",
+    "title": "How to use MongoDb as a Graph database",
+    "authorId": "ashwins93",
     "references": [
-      { "type": "video", "icon": "youtube", "link": "" },
-      { "type": "slide", "icon": "slide", "link": "" },
-      { "type": "code", "icon": "github", "link": "" }
+      {
+        "type": "video",
+        "icon": "youtube",
+        "link": "https://graphdb.webt.win/#/"
+      },
+      {
+        "type": "slide",
+        "icon": "slide",
+        "link": "https://graphdb.webt.win/#/"
+      },
+      {
+        "type": "code",
+        "icon": "github",
+        "link": "https://github.com/ashwins93/graphdb-talk"
+      }
     ],
     "date": "21/01/2023"
   },
   {
-    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-    "title": "Qwik - A Zero JS Resumable Framework",
-    "authorId": "ragavkumarv",
+    "cover": "https://ik.imagekit.io/ragavkumarv/chennai-dev/astro-island-architecture.png",
+    "title": "Astro Island Architecture 🚀",
+    "authorId": "sivadass",
     "references": [
-      { "type": "video", "icon": "youtube", "link": "" },
-      { "type": "code", "icon": "github", "link": "" }
+      {
+        "type": "video",
+        "icon": "youtube",
+        "link": "https://youtu.be/YRybdrCrWYM"
+      },
+      {
+        "type": "slide",
+        "icon": "slide",
+        "link": "https://github.com/ragavkumarv/chennai-js-resources/blob/main/Astro-Island-Architecture.pdf"
+      }
     ],
-    "date": "21/01/2023"
+    "date": "11/11/2022"
   },
   {
-    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-    "title": "Qwik - A Zero JS Resumable Framework",
-    "authorId": "ragavkumarv",
+    "cover": "https://ik.imagekit.io/ragavkumarv/chennai-dev/basic-to-advaced-concepts-typescript.png",
+    "title": "Basic to Advaced concepts Typescript ✨",
+    "authorId": "iNikhilKumaran",
     "references": [
-      { "type": "video", "icon": "youtube", "link": "" },
-      { "type": "slide", "icon": "slide", "link": "" },
-      { "type": "code", "icon": "github", "link": "" }
+      {
+        "type": "video",
+        "icon": "youtube",
+        "link": "https://youtu.be/Om07O7zfwOo"
+      },
+      {
+        "type": "code",
+        "icon": "github",
+        "link": "https://github.com/Nikhil-Kumaran/typescript-talk-examples"
+      }
     ],
-    "date": "21/01/2023"
-  },
-  {
-    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-    "title": "Qwik - A Zero JS Resumable Framework",
-    "authorId": "ragavkumarv",
-    "references": [
-      { "type": "video", "icon": "youtube", "link": "" },
-      { "type": "slide", "icon": "slide", "link": "" },
-      { "type": "code", "icon": "github", "link": "" }
-    ],
-    "date": "28/10/2022"
-  },
-  {
-    "cover": "https://ik.imagekit.io/ragavkumarv/talks/chennai-js-qwik-a-zero-js-resumable-framework.png",
-    "title": "Qwik - A Zero JS Resumable Framework",
-    "authorId": "ragavkumarv",
-    "references": [
-      { "type": "video", "icon": "youtube", "link": "" },
-      { "type": "slide", "icon": "slide", "link": "" },
-      { "type": "code", "icon": "github", "link": "" }
-    ],
-    "date": "28/10/2022"
+    "date": "11/11/2022"
   }
 ]

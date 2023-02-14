@@ -2,10 +2,37 @@
   {
     "id": "ragavkumarv",
     "name": "Ragav Kumar V",
-    "pic": "https://ik.imagekit.io/ragavkumarv/tr:450/potraits/ragavkumarv-coat-clean-high-res-touch-pos-sm.png",
+    "pic": "https://avatars.githubusercontent.com/u/13447232",
     "social": {
       "twitter": "http://twitter.com/ragavkumarv",
       "linkendIn": "http://linkedin.com/in/ragavkumarv"
+    }
+  },
+  {
+    "id": "iNikhilKumaran",
+    "name": "Nikhil Kumaran",
+    "pic": "https://avatars.githubusercontent.com/u/25131835",
+    "social": {
+      "twitter": "https://twitter.com/iNikhilKumaran",
+      "linkendIn": "https://www.linkedin.com/in/nikhilkumaran/"
+    }
+  },
+  {
+    "id": "ashwins93",
+    "name": "Ashwin Sundararajan",
+    "pic": "https://avatars.githubusercontent.com/u/46514389",
+    "social": {
+      "twitter": "https://twitter.com/ashwins93",
+      "linkendIn": "https://www.linkedin.com/in/ashwins93/"
+    }
+  },
+  {
+    "id": "sivadass",
+    "name": "Sivadass Navaneethan",
+    "pic": "https://avatars.githubusercontent.com/u/10391786",
+    "social": {
+      "twitter": "https://twitter.com/NSivadass",
+      "linkendIn": "https://www.linkedin.com/in/sivadass/"
     }
   }
 ]
