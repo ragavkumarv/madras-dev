@@ -15,7 +15,7 @@ import {
   UpcomingContainer,
   H2,
   UpcomingRegistration,
-} from "./Spacer4";
+} from "./UpcomingRegistration";
 
 export default function Home() {
   return (

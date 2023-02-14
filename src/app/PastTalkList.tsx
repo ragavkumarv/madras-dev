@@ -2,7 +2,33 @@
 import styled from "@emotion/styled";
 import { groupBy } from "ramda";
 import { PastTalkDate } from "./PastTalkDate";
-import { TalkCard } from "./Speaker";
+import { TalkCard } from "./TalkCard";
+
+export interface Talk {
+  title: string;
+  authorId: string;
+  references: Reference[];
+  date: string;
+  cover?: string;
+}
+
+export interface Reference {
+  type: Type;
+  icon: Icon;
+  link: string;
+}
+
+export enum Icon {
+  Github = "github",
+  Slide = "slide",
+  Youtube = "youtube",
+}
+
+export enum Type {
+  Code = "code",
+  Slide = "slide",
+  Video = "video",
+}
 
 const PastTalkListContainer = styled.div`
   display: grid;
@@ -15,10 +41,11 @@ const PastTalkListContainer = styled.div`
   position: relative;
   margin: 3rem 0px;
 `;
-export function PastTalkList({ talkList }) {
+
+export function PastTalkList({ talkList }: { talkList: Talk[] }) {
   const talks = talkList;
 
-  let talksDateGrouped = groupBy((data) => data.date)(talks);
+  let talksDateGrouped = groupBy((data: Talk) => data.date)(talks);
 
   // console.log("***", talksDateGrouped);
   return (

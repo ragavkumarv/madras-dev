@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { ShareSocialLinks } from "./ShareSocialLinks";
 import NextImage from "next/image";
 import speakersData from "./speakers.json";
+import { Talk } from "./PastTalkList";
 
 export interface Speaker {
   id: string;
@@ -66,7 +67,7 @@ const TalkCardContainer = styled.div`
   }
 `;
 
-export function TalkCard({ talk }) {
+export function TalkCard({ talk }: { talk: Talk }) {
   const author = SPEAKERS.find(
     (author) => author.id === talk.authorId
   ) as Speaker;

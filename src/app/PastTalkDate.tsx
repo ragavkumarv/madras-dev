@@ -22,7 +22,8 @@ const PastTalkDateContainer = styled.div`
     font-weight: 700;
   }
 `;
-export function PastTalkDate({ date }) {
+
+export function PastTalkDate({ date }: { date: string }) {
   const pastDate = dateFormatter(date);
   return (
     <PastTalkDateContainer>

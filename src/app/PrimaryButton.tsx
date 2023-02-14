@@ -3,7 +3,8 @@ import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./Navigation";
 
-export function PrimaryButton({ children, sx, ...props }) {
+// TODO: Right types
+export function PrimaryButton({ children, sx = {}, ...props }: any) {
   return (
     <ThemeProvider theme={theme}>
       <Button
