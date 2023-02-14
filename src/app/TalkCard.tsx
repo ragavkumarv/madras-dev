@@ -13,8 +13,8 @@ export interface Speaker {
 }
 
 export interface Social {
-  twitter: string;
-  linkendIn: string;
+  twitter?: string;
+  linkendIn?: string;
 }
 const SPEAKERS: Speaker[] = speakersData;
 const TalkCover = styled(NextImage)`
