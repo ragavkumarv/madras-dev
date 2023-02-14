@@ -32,15 +32,6 @@ const NavContainer = styled.nav`
     font-family: var(--ff-sans-serif);
     font-weight: 600;
   }
-
-  > ul a {
-    color: var(--dark-white);
-    text-decoration: none;
-
-    &:hover {
-      color: var(--light-white);
-    }
-  }
 `;
 
 export const Navigation = () => {
@@ -82,5 +73,5 @@ export const Navigation = () => {
 };
 
 const Logo = () => {
-  return <h1>Madras Dev</h1>;
+  return <h1>Chennai Dev</h1>;
 };
