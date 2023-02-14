@@ -30,10 +30,15 @@ const DateTime = styled.p`
 const MeetupDate = styled.p`
   font-size: 2rem;
 `;
-const DateTimeContainer = styled.p`
+const DateTimeContainer = styled.div`
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  /* gap: 1rem; */
   text-transform: uppercase;
+
+  @media (min-width: 500px) {
+    gap: 2rem;
+  }
 `;
 const Place = styled.a`
   font-size: 1.5rem;

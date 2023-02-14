@@ -25,6 +25,7 @@ const NavContainer = styled.nav`
   > ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 2.5rem;
     padding: 1.5rem 0;

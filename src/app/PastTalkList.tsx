@@ -40,6 +40,10 @@ const PastTalkListContainer = styled.div`
   row-gap: 3rem;
   position: relative;
   margin: 3rem 0px;
+
+  @media (min-width: 1000px) {
+    justify-items: initial;
+  }
 `;
 
 export function PastTalkList({ talkList }: { talkList: Talk[] }) {

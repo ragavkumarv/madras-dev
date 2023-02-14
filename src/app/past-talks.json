@@ -53,11 +53,6 @@
     "authorId": "iNikhilKumaran",
     "references": [
       {
-        "type": "video",
-        "icon": "youtube",
-        "link": "https://youtu.be/Om07O7zfwOo"
-      },
-      {
         "type": "code",
         "icon": "github",
         "link": "https://github.com/Nikhil-Kumaran/typescript-talk-examples"
