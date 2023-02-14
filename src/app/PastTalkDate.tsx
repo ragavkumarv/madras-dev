@@ -17,7 +17,7 @@ const PastTalkDateContainer = styled.div`
   left: 0px;
   transform: translateX(calc(-100% - 1rem));
 
-  p:nth-child(2) {
+  p:nth-of-type(2) {
     font-size: 2.25rem;
     font-weight: 700;
   }

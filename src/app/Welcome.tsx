@@ -17,7 +17,7 @@ import {
   UpcomingRegistration,
 } from "./UpcomingRegistration";
 
-export default function Home() {
+export function Welcome() {
   return (
     <main>
       <Spacer4 />
