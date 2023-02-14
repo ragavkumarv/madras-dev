@@ -64,5 +64,18 @@
       }
     ],
     "date": "11/11/2022"
+  },
+  {
+    "cover": "https://ik.imagekit.io/ragavkumarv/chennai-dev/react-server-components-h6165-temp.png",
+    "title": "React Server Components",
+    "authorId": "h6165",
+    "references": [
+      {
+        "type": "slide",
+        "icon": "slide",
+        "link": "https://slides.com/zerothabhishek/react-server-components-next-13/"
+      }
+    ],
+    "date": "11/11/2022"
   }
 ]
