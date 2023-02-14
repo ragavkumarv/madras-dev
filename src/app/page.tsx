@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import { ImageProps } from "next/image";
 import pastTalks from "./past-talks.json";
 import upcomingTalks from "./upcoming-talks.json";
-import { PastTalkList } from "./PastTalkList";
+import { PastTalkList, Talk } from "./PastTalkList";
 import {
   Spacer4,
   UpcomingContainer,
@@ -41,7 +41,7 @@ export default function Home() {
       <section>
         <H2 id="past-talks">Past Talks</H2>
         {/* <PastTalkDate /> */}
-        <PastTalkList talkList={pastTalks} />
+        <PastTalkList talkList={pastTalks as Talk[]} />
       </section>
     </main>
   );
