@@ -1,3 +1,4 @@
+import { Talk } from "@/app/PastTalkList";
 import { Welcome } from "@/app/Welcome";
 import Head from "next/head";
 // import Image from 'next/image'
@@ -8,7 +9,7 @@ import { Navigation } from "../app/Navigation";
 
 // const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ pastTalks }) {
+export default function Home({ pastTalks }: { pastTalks: Talk[] }) {
   return (
     <>
       <Head>
@@ -27,7 +28,7 @@ export async function getStaticProps() {
     "https://strapi-cms-api-eu.onrender.com/api/past-talks?populate[speaker][populate]=*&populate[cover][url]&populate[references]=*"
   );
   const strapiData = await res.json();
-  const pastTalks = strapiData.data.map((dt) => dt.attributes);
+  const pastTalks: Talk[] = strapiData.data?.map((dt) => dt.attributes);
 
   console.log(pastTalks);
 

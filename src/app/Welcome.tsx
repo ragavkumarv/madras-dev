@@ -17,12 +17,11 @@ import {
   UpcomingRegistration,
 } from "./UpcomingRegistration";
 
-export function Welcome({ pastTalks }) {
+export function Welcome({ pastTalks }: { pastTalks: Talk[] }) {
   return (
     <main>
       <section>
         <H2 id="past-talks">Past Talks</H2>
-        {/* <PastTalkDate /> */}
         <PastTalkList talkList={pastTalks as Talk[]} />
       </section>
     </main>
