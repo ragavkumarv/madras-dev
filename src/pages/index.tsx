@@ -8,7 +8,7 @@ import { Navigation } from "../app/Navigation";
 
 // const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ pastTalks }) {
   return (
     <>
       <Head>
@@ -17,7 +17,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Welcome />
+      <Welcome pastTalks={pastTalks} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch(
+    "https://strapi-cms-api-eu.onrender.com/api/past-talks?populate[speaker][populate]=*&populate[cover][url]&populate[references]=*"
+  );
+  const strapiData = await res.json();
+  const pastTalks = strapiData.data.map((dt) => dt.attributes);
+
+  console.log(pastTalks);
+
+  return {
+    props: { pastTalks },
+  };
 }

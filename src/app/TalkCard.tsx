@@ -68,14 +68,19 @@ const TalkCardContainer = styled.div`
 `;
 
 export function TalkCard({ talk }: { talk: Talk }) {
-  const author = SPEAKERS.find(
-    (author) => author.id === talk.authorId
-  ) as Speaker;
+  // const author = SPEAKERS.find(
+  //   (author) => author.id === talk.authorId
+  // ) as Speaker;
+
+  const author = talk?.speaker?.data?.attributes || {};
+
+  console.log(author);
+
   return (
     <TalkCardContainer>
-      {talk.cover && (
+      {talk.cover?.data?.attributes?.url && (
         <TalkCover
-          src={talk.cover}
+          src={talk.cover?.data?.attributes?.url}
           alt={talk.title}
           quality={100}
           height="243"
@@ -95,8 +100,12 @@ export function TalkCard({ talk }: { talk: Talk }) {
         <SpeakerDetails>
           <p>{author.name}</p>
           <SocialContainer>
-            <a href={author.social.twitter}>{ShareSocialLinks.twitter}</a>
-            <a href={author.social.linkendIn}>{ShareSocialLinks.linkendIn}</a>
+            {author.social?.twitter && (
+              <a href={author.social?.twitter}>{ShareSocialLinks.twitter}</a>
+            )}
+            {author.social?.linkedIn && (
+              <a href={author.social?.linkedIn}>{ShareSocialLinks.linkedIn}</a>
+            )}
           </SocialContainer>
         </SpeakerDetails>
       </SpeakerContainer>

@@ -32,7 +32,7 @@ export const ShareSocialLinks = {
     </svg>
   ),
 
-  linkendIn: (
+  linkedIn: (
     <svg viewBox="0 0 128 128">
       <path
         fill="var(--share-icons-clr)"
