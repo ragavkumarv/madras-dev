@@ -18,7 +18,7 @@ export interface Social {
 }
 const SPEAKERS: Speaker[] = speakersData;
 const TalkCover = styled(NextImage)`
-  object-fit: cover;
+  object-fit: contain;
 `;
 const SpeakerPic = styled.img`
   height: 78px;
