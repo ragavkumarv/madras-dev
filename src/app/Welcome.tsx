@@ -16,11 +16,22 @@ import {
   H2,
   UpcomingRegistration,
 } from "./UpcomingRegistration";
+import { MeetupDetail } from "@/pages";
 
-export function Welcome({ pastTalks }: { pastTalks: Talk[] }) {
+export function Welcome({
+  pastTalks,
+  meetupDetails,
+}: {
+  pastTalks: Talk[];
+  meetupDetails: MeetupDetail[];
+}) {
   const today = new Date();
   let yesterday = new Date(today);
   yesterday.setDate(today.getDate() - 1);
+
+  const sortedTalks = pastTalks.sort(
+    (a, b) => +new Date(b.date) - +new Date(a.date)
+  );
 
   return (
     <main>
@@ -37,11 +48,16 @@ export function Welcome({ pastTalks }: { pastTalks: Talk[] }) {
         </UpcomingContainer>
         <Spacer4 />
         <section>
-          <UpcomingRegistration />
+          {meetupDetails
+            .filter((data) => new Date(data.date) >= yesterday)
+            .map((meetupDetail, key) => (
+              <UpcomingRegistration key={key} meetupDetail={meetupDetail} />
+            ))}
+
           <Spacer4 />
           <H2>Topics</H2>
           <PastTalkList
-            talkList={pastTalks.filter(
+            talkList={sortedTalks.filter(
               (data) => new Date(data.date) >= yesterday
             )}
           />
@@ -49,7 +65,9 @@ export function Welcome({ pastTalks }: { pastTalks: Talk[] }) {
         <Spacer4 />
         <H2 id="past-talks">Past Talks</H2>
         <PastTalkList
-          talkList={pastTalks.filter((data) => new Date(data.date) < yesterday)}
+          talkList={sortedTalks.filter(
+            (data) => new Date(data.date) < yesterday
+          )}
         />
       </section>
     </main>

@@ -6,6 +6,7 @@ import PlaceIcon from "@mui/icons-material/Place";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import upcomingTalkRegistration from "./upcoming-meetup-details.json";
 import { dateFormatter } from "./dateFormatter";
+import { MeetupDetail } from "@/pages";
 
 export const H2 = styled.h2`
   font-size: 2rem;
@@ -51,8 +52,12 @@ const RegistrationContainer = styled.div`
   gap: 0.75rem;
   align-items: flex-start;
 `;
-export function UpcomingRegistration() {
-  const today = dateFormatter(upcomingTalkRegistration.date);
+export function UpcomingRegistration({
+  meetupDetail,
+}: {
+  meetupDetail: MeetupDetail;
+}) {
+  const today = dateFormatter(meetupDetail.date);
   return (
     <RegistrationContainer>
       <DateTimeContainer>
@@ -65,8 +70,7 @@ export function UpcomingRegistration() {
               fontSize: "2rem",
             }}
           />
-          {upcomingTalkRegistration.fromTime} -{" "}
-          {upcomingTalkRegistration.endTime} IST
+          {meetupDetail.fromTime} - {meetupDetail.endTime} IST
         </DateTime>
       </DateTimeContainer>
       <Place target="_blank" href={upcomingTalkRegistration.location.mapLink}>
