@@ -67,11 +67,15 @@ export async function getStaticProps() {
     `${API}/api/past-talks?populate[speaker][populate]=*&populate[cover][url]&populate[references]=*`
   );
   const strapiData = await res.json();
-  const pastTalks: Talk[] = strapiData.data?.map((dt) => dt.attributes);
+  const pastTalks: Talk[] = strapiData.data?.map(
+    (dt: { attributes: Talk }) => dt.attributes
+  );
 
   const res1 = await fetch(`${API}/api/meetup-details?populate=*`);
   const strapiData1 = await res1.json();
-  const meetupDetails = strapiData1.data?.map((dt) => dt.attributes);
+  const meetupDetails: MeetupDetail[] = strapiData1.data?.map(
+    (dt: { attributes: MeetupDetail }) => dt.attributes
+  );
 
   console.log("🤩🤩", meetupDetails);
 

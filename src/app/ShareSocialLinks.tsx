@@ -1,6 +1,16 @@
 "use client";
 
-export const ShareSocialLinks = {
+export interface ShareSocialLinks {
+  codepen: JSX.Element;
+  twitter: JSX.Element;
+  github: JSX.Element;
+  linkedIn: JSX.Element;
+  whatsapp: JSX.Element;
+  youtube: JSX.Element;
+  slide: JSX.Element;
+}
+
+export const ShareSocialLinks: ShareSocialLinks = {
   codepen: (
     <svg viewBox="0 0 128 128">
       <path
