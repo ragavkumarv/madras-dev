@@ -58,6 +58,18 @@ export function UpcomingRegistration({
   meetupDetail: MeetupDetail;
 }) {
   const today = dateFormatter(meetupDetail.date);
+  let fromDate = new Date(`${meetupDetail.date}T${meetupDetail.fromTime}`);
+  const fromTime = fromDate.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  let endDate = new Date(`${meetupDetail.date}T${meetupDetail.endTime}`);
+  const endTime = endDate.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
   return (
     <RegistrationContainer>
       <DateTimeContainer>
@@ -70,20 +82,23 @@ export function UpcomingRegistration({
               fontSize: "2rem",
             }}
           />
-          {meetupDetail.fromTime} - {meetupDetail.endTime} IST
+          {fromTime} - {endTime} IST
         </DateTime>
       </DateTimeContainer>
-      <Place target="_blank" href={upcomingTalkRegistration.location.mapLink}>
+      <Place target="_blank" href={meetupDetail.venue.data.attributes.mapLink}>
         <PlaceIcon
           sx={{
             color: "var(--accent-clr)",
             fontSize: "1.75rem",
           }}
         />
-        {upcomingTalkRegistration.location.name}
+        {meetupDetail.venue.data.attributes.name}
       </Place>
       <PrimaryButton
         endIcon={<ArrowForwardIosIcon />}
+        onClick={() => {
+          window.location.replace(meetupDetail.registrationLink);
+        }}
         sx={{
           fontWeight: "400",
           fontSize: "1.5rem",
