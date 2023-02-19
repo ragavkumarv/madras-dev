@@ -64,7 +64,7 @@ export default function Home({
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${API}/api/past-talks?populate[speaker][populate]=*&populate[cover][url]&populate[references]=*`
+    `${API}/api/past-talks?pagination[pageSize]=100000&populate[speaker][populate]=*&populate[cover][url]&populate[references]=*`
   );
   const strapiData = await res.json();
   const pastTalks: Talk[] = strapiData.data?.map(
