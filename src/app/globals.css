@@ -2,7 +2,7 @@
 
 :root {
   --content-size: min(calc(100% - 2rem), 73rem);
-  --ff-sans-serif: "Proxima Nova", "sans-serif";
+  --ff-sans-serif: "Roboto", "sans-serif";
   --primary-clr: hsl(248, 31%, 20%);
   --secondary-clr: hsl(180, 50%, 82%);
   --accent-clr: hsl(35, 100%, 61%);

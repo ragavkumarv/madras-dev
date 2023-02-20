@@ -4,6 +4,11 @@ import { ShareSocialLinks } from "./ShareSocialLinks";
 import NextImage from "next/image";
 import speakersData from "./speakers.json";
 import { Talk } from "./PastTalkList";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import { Spacer4 } from "./UpcomingRegistration";
+import Tooltip from "@mui/material/Tooltip";
 
 export interface Speaker {
   id: string;
@@ -17,8 +22,11 @@ export interface Social {
   linkendIn?: string;
 }
 const SPEAKERS: Speaker[] = speakersData;
+
 const TalkCover = styled(NextImage)`
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center bottom;
+  width: 100%;
 `;
 const SpeakerPic = styled.img`
   height: 78px;
@@ -40,6 +48,8 @@ const SocialContainer = styled.div`
   }
 `;
 const SpeakerContainer = styled.div`
+  margin-top: auto;
+  /* flex-grow: 1; */
   display: flex;
   gap: 1rem;
 
@@ -56,8 +66,9 @@ const SpeakerDetails = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-const TalkCardContainer = styled.div`
-  width: 445px;
+const TalkCardContainer = styled(Card)`
+  max-width: 445px;
+  /* min-height: 450px; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -65,6 +76,12 @@ const TalkCardContainer = styled.div`
   h3 {
     font-size: 28px;
   }
+`;
+
+const TalkTitle = styled.h3`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export function TalkCard({ talk }: { talk: Talk }) {
@@ -87,28 +104,37 @@ export function TalkCard({ talk }: { talk: Talk }) {
           width="445"
         />
       )}
-      <SocialContainer>
-        {talk.references.map((tk, index) => (
-          <a key={index} href={tk.link} className={`${tk.icon}-icon`}>
-            {ShareSocialLinks[tk.icon]}
-          </a>
-        ))}
-      </SocialContainer>
-      <h3>{talk.title}</h3>
-      <SpeakerContainer>
-        <SpeakerPic src={author.pic} alt={author.name} />
-        <SpeakerDetails>
-          <p>{author.name}</p>
-          <SocialContainer>
-            {author.social?.twitter && (
-              <a href={author.social?.twitter}>{ShareSocialLinks.twitter}</a>
-            )}
-            {author.social?.linkedIn && (
-              <a href={author.social?.linkedIn}>{ShareSocialLinks.linkedIn}</a>
-            )}
-          </SocialContainer>
-        </SpeakerDetails>
-      </SpeakerContainer>
+      <CardContent
+        sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+      >
+        <SocialContainer>
+          {talk.references.map((tk, index) => (
+            <a key={index} href={tk.link} className={`${tk.icon}-icon`}>
+              {ShareSocialLinks[tk.icon]}
+            </a>
+          ))}
+        </SocialContainer>
+        <Tooltip title={talk.title}>
+          <TalkTitle>{talk.title}</TalkTitle>
+        </Tooltip>
+        <Spacer4 />
+        <SpeakerContainer>
+          <SpeakerPic src={author.pic} alt={author.name} />
+          <SpeakerDetails>
+            <p>{author.name}</p>
+            <SocialContainer>
+              {author.social?.twitter && (
+                <a href={author.social?.twitter}>{ShareSocialLinks.twitter}</a>
+              )}
+              {author.social?.linkedIn && (
+                <a href={author.social?.linkedIn}>
+                  {ShareSocialLinks.linkedIn}
+                </a>
+              )}
+            </SocialContainer>
+          </SpeakerDetails>
+        </SpeakerContainer>
+      </CardContent>
     </TalkCardContainer>
   );
 }
