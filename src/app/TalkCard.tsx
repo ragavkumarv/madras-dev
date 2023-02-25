@@ -11,6 +11,8 @@ import { Spacer4 } from "./UpcomingRegistration";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 
+const defaultUserIcon =
+  "https://cdn-icons-png.flaticon.com/512/149/149071.png?w=1380&t=st=1677346403~exp=1677347003~hmac=fbc7e4fc15964fc33481d547ec91c2c80acd21aaf1f826ea59ea36b49d4a9485";
 export interface Speaker {
   id: string;
   name: string;
@@ -41,10 +43,6 @@ const SocialContainer = styled.div`
   align-items: center;
 
   svg {
-    height: 32px;
-  }
-
-  .youtube-icon svg {
     height: 28px;
   }
 `;
@@ -60,11 +58,7 @@ const SocialContainerX = styled.div`
   transform: translateY(calc(-50% - 1rem));
 
   svg {
-    height: 32px;
-  }
-
-  .youtube-icon svg {
-    height: 28px;
+    height: 36px;
   }
 `;
 
@@ -79,7 +73,7 @@ const SpeakerContainer = styled.div`
   }
 
   svg {
-    height: 24px;
+    height: 26px;
   }
 `;
 const SpeakerDetails = styled.div`
@@ -165,7 +159,7 @@ export function TalkCard({ talk }: { talk: Talk }) {
         </Tooltip>
         <Spacer4 />
         <SpeakerContainer>
-          <SpeakerPic src={author.pic} alt={author.name} />
+          <SpeakerPic src={author.pic || defaultUserIcon} alt={author.name} />
           <SpeakerDetails>
             <p>{author.name}</p>
             <SocialContainer>
