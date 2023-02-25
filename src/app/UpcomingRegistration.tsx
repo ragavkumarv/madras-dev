@@ -12,6 +12,7 @@ export const H2 = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
 `;
+
 export const UpcomingContainer = styled.section`
   p {
     font-size: 1.5rem;
@@ -22,22 +23,22 @@ export const Spacer4 = styled.div`
   width: 100%;
   height: 68px;
 `;
+
 const DateTime = styled.p`
-  font-size: 2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 `;
-const MeetupDate = styled.p`
-  font-size: 2rem;
-`;
+
 const DateTimeContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  font-size: 1.5rem;
   /* gap: 1rem; */
   text-transform: uppercase;
 
   @media (min-width: 500px) {
+    font-size: 2rem;
     gap: 2rem;
   }
 `;
@@ -73,9 +74,9 @@ export function UpcomingRegistration({
   return (
     <RegistrationContainer>
       <DateTimeContainer>
-        <MeetupDate>
+        <p>
           {today.month} <strong>{today.day}</strong> {today.year}
-        </MeetupDate>
+        </p>
         <DateTime>
           <AccessTimeIcon
             sx={{

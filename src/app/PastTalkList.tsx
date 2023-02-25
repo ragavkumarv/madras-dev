@@ -123,11 +123,11 @@ const PastTalkListContainer = styled.div`
   row-gap: 3rem;
   position: relative;
   margin: 3rem 0px;
+  align-items: stretch;
 
   @media (min-width: 600px) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(445px, 1fr));
-    align-items: start;
   }
 
   @media (min-width: 1000px) {
