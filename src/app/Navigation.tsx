@@ -27,6 +27,11 @@ export const theme = createTheme({
 });
 
 const NavContainer = styled.nav`
+  position: sticky;
+  top: 0px;
+  background: white;
+  z-index: 10;
+
   > ul {
     list-style: none;
     display: flex;

@@ -48,6 +48,26 @@ const SocialContainer = styled.div`
     height: 28px;
   }
 `;
+
+const SocialContainerX = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  transform: translateY(calc(-50% - 1rem));
+
+  svg {
+    height: 32px;
+  }
+
+  .youtube-icon svg {
+    height: 28px;
+  }
+`;
+
 const SpeakerContainer = styled.div`
   margin-top: auto;
   /* flex-grow: 1; */
@@ -87,6 +107,19 @@ const TalkTitle = styled.h3`
   font-weight: 600;
 `;
 
+const SocialIcon = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 41.41px;
+  height: 41.41px;
+
+  background: #ffffff;
+  box-shadow: 0px 4.35882px 4.35882px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+`;
+
 export function TalkCard({ talk }: { talk: Talk }) {
   // const author = SPEAKERS.find(
   //   (author) => author.id === talk.authorId
@@ -108,15 +141,25 @@ export function TalkCard({ talk }: { talk: Talk }) {
         />
       )}
       <CardContent
-        sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          flexGrow: 1,
+          position: "relative",
+        }}
       >
-        <SocialContainer>
-          {talk.references.map((tk, index) => (
-            <a key={index} href={tk.link} className={`${tk.icon}-icon`}>
-              {ShareSocialLinks[tk.icon]}
-            </a>
-          ))}
-        </SocialContainer>
+        <SocialContainerX>
+          {talk.references.map(
+            (tk, index) =>
+              tk.link && (
+                <SocialIcon key={index}>
+                  <a href={tk.link} className={`${tk.icon}-icon`}>
+                    {ShareSocialLinks[tk.icon]}
+                  </a>
+                </SocialIcon>
+              )
+          )}
+        </SocialContainerX>
         <Tooltip title={talk.title}>
           <TalkTitle>{talk.title}</TalkTitle>
         </Tooltip>
