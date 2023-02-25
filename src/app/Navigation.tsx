@@ -27,16 +27,9 @@ export const theme = createTheme({
 });
 
 const NavContainer = styled.nav`
-  display: flex;
-
-  @media (min-width: 800px) {
-    display: block;
-  }
-
   > ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 2.5rem;
     padding: 1.5rem 0;
@@ -90,11 +83,6 @@ export const Navigation = () => {
               onClick={() => navigate.push(item.path)}
               sx={{
                 textAlign: "center",
-                color: "var(--dark-white)",
-                "&:hover": {
-                  backgroundColor: "var(--nav-clr-1)",
-                  color: "white",
-                },
               }}
             >
               <ListItemText
@@ -102,6 +90,7 @@ export const Navigation = () => {
                   <Typography
                     sx={{
                       display: "inline",
+                      fontWeight: "500",
                     }}
                     component="span"
                     variant="h5"
@@ -116,7 +105,9 @@ export const Navigation = () => {
         ))}
       </List>
 
-      <PrimaryButton>Join Us</PrimaryButton>
+      <PrimaryButton sx={{ width: "100%" }} size="large">
+        Join Us
+      </PrimaryButton>
     </Box>
   );
 
@@ -141,7 +132,12 @@ export const Navigation = () => {
           ))}
 
           <li>
-            <PrimaryButton>Join Us</PrimaryButton>
+            <PrimaryButton
+              sx={{ display: { xs: "none", md: "block" } }}
+              size="large"
+            >
+              Join Us
+            </PrimaryButton>
           </li>
 
           <Box sx={{ display: { md: "none" } }}>
@@ -171,7 +167,6 @@ export const Navigation = () => {
               boxSizing: "border-box",
               width: drawerWidth,
               background: "var(--body-bg)",
-              color: "white",
             },
           }}
         >
