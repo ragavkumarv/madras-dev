@@ -9,6 +9,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import { Spacer4 } from "./UpcomingRegistration";
 import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
 
 export interface Speaker {
   id: string;
@@ -82,6 +83,7 @@ const TalkTitle = styled.h3`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 600;
 `;
 
 export function TalkCard({ talk }: { talk: Talk }) {
