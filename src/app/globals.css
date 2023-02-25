@@ -1,4 +1,6 @@
-@import url("https://fonts.cdnfonts.com/css/proxima-nova-2?styles=44818,44820,44812");
+/* @import url("https://fonts.cdnfonts.com/css/proxima-nova-2?styles=44818,44820,44812"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
   --content-size: min(calc(100% - 2rem), 73rem);
@@ -9,6 +11,8 @@
   --ref-icon-clr: hsl(355, 67%, 48%);
   --share-icons-clr: var(--accent-clr);
   --link-highlight: hsl(49, 98%, 60%);
+  --black-hsl: 0, 0%, 100%;
+  --body-bg: hsl(var(--black-hsl));
 }
 
 body {
