@@ -68,6 +68,7 @@ const SpeakerDetails = styled.div`
   justify-content: space-between;
 `;
 const TalkCardContainer = styled(Card)`
+  width: 100%;
   max-width: 445px;
   /* min-height: 450px; */
   display: flex;

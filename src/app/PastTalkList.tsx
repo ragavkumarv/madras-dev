@@ -115,16 +115,20 @@ export interface Social {
 }
 
 const PastTalkListContainer = styled.div`
+  /* width: max-content; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(445px, 1fr));
-  align-items: start;
+  grid-template-columns: 1fr;
   justify-items: center;
-  /* display: flex;
-  flex-wrap: wrap; */
   gap: 1rem;
   row-gap: 3rem;
   position: relative;
   margin: 3rem 0px;
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(445px, 1fr));
+    align-items: start;
+  }
 
   @media (min-width: 1000px) {
     justify-items: initial;
