@@ -13,10 +13,8 @@ export const H2 = styled.h2`
   margin-bottom: 1rem;
 `;
 
-export const UpcomingContainer = styled.section`
-  p {
-    font-size: 1.5rem;
-  }
+export const ParaLarge = styled.p`
+  font-size: 1.5rem;
 `;
 
 export const Spacer4 = styled.div`

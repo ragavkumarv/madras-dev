@@ -12,9 +12,9 @@ import upcomingTalks from "./upcoming-talks.json";
 import { PastTalkList, Talk } from "./PastTalkList";
 import {
   Spacer4,
-  UpcomingContainer,
   H2,
   UpcomingRegistration,
+  ParaLarge,
 } from "./UpcomingRegistration";
 import { MeetupDetail } from "@/pages";
 
@@ -37,15 +37,15 @@ export function Welcome({
     <main>
       <section>
         <Spacer4 />
-        <UpcomingContainer>
+        <section>
           <H2 id="upcoming-talks">Upcoming talks</H2>
-          <p>
+          <ParaLarge>
             Slots are <strong>open</strong> contact the organiser for presenting
             your talk.
             <br /> People who are interested attend kindly register now in the
             link below
-          </p>
-        </UpcomingContainer>
+          </ParaLarge>
+        </section>
         <Spacer4 />
         <section>
           {meetupDetails

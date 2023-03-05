@@ -121,7 +121,7 @@ export function TalkCard({ talk }: { talk: Talk }) {
 
   const author = talk?.speaker?.data?.attributes || {};
 
-  console.log(author);
+  // console.log(author);
 
   return (
     <TalkCardContainer>

@@ -78,7 +78,7 @@ export async function getStaticProps() {
     (dt: { attributes: MeetupDetail }) => dt.attributes
   );
 
-  console.log("🤩🤩", meetupDetails);
+  // console.log("🤩🤩", meetupDetails);
 
   return {
     props: { pastTalks, meetupDetails },
