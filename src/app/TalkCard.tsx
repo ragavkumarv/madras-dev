@@ -132,6 +132,7 @@ export function TalkCard({ talk }: { talk: Talk }) {
           quality={100}
           height="243"
           width="445"
+          loading="lazy"
         />
       )}
       <CardContent
@@ -159,7 +160,11 @@ export function TalkCard({ talk }: { talk: Talk }) {
         </Tooltip>
         <Spacer4 />
         <SpeakerContainer>
-          <SpeakerPic src={author.pic || defaultUserIcon} alt={author.name} />
+          <SpeakerPic
+            loading="lazy"
+            src={author.pic || defaultUserIcon}
+            alt={author.name}
+          />
           <SpeakerDetails>
             <p>{author.name}</p>
             <SocialContainer>
