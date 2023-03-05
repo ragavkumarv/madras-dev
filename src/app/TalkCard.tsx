@@ -2,7 +2,6 @@
 import styled from "@emotion/styled";
 import { ShareSocialLinks } from "./ShareSocialLinks";
 import NextImage from "next/image";
-import speakersData from "./speakers.json";
 import { Talk } from "./PastTalkList";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -10,6 +9,7 @@ import CardContent from "@mui/material/CardContent";
 import { Spacer4 } from "./UpcomingRegistration";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
+import { CldImage } from "next-cloudinary";
 
 const defaultUserIcon =
   "https://cdn-icons-png.flaticon.com/512/149/149071.png?w=1380&t=st=1677346403~exp=1677347003~hmac=fbc7e4fc15964fc33481d547ec91c2c80acd21aaf1f826ea59ea36b49d4a9485";
@@ -24,13 +24,13 @@ export interface Social {
   twitter?: string;
   linkendIn?: string;
 }
-const SPEAKERS: Speaker[] = speakersData;
 
-const TalkCover = styled(NextImage)`
+const TalkCover = styled(CldImage)`
   object-fit: cover;
   object-position: center bottom;
   width: 100%;
 `;
+
 const SpeakerPic = styled.img`
   height: 78px;
   aspect-ratio: 1 / 1;
@@ -125,11 +125,17 @@ export function TalkCard({ talk }: { talk: Talk }) {
 
   return (
     <TalkCardContainer>
+      {/* <CldImage
+          alt="Framer motion"
+          width="960"
+          height="600"
+          src="v1676605600/framer_9b43fcc6e3.gif"
+          sizes="100vw"
+        /> */}
       {talk.cover?.data?.attributes?.url && (
         <TalkCover
           src={talk.cover?.data?.attributes?.url}
           alt={talk.title}
-          quality={100}
           height="243"
           width="445"
           loading="lazy"

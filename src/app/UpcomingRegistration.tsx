@@ -4,7 +4,6 @@ import { PrimaryButton } from "./PrimaryButton";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import PlaceIcon from "@mui/icons-material/Place";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import upcomingTalkRegistration from "./upcoming-meetup-details.json";
 import { dateFormatter } from "./dateFormatter";
 import { MeetupDetail } from "@/pages";
 

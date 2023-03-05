@@ -7,8 +7,6 @@ import styles from "./page.module.css";
 
 import IconButton from "@mui/material/IconButton";
 import { ImageProps } from "next/image";
-// import pastTalks from "./past-talks.json";
-import upcomingTalks from "./upcoming-talks.json";
 import { PastTalkList, Talk } from "./PastTalkList";
 import {
   Spacer4,
@@ -17,6 +15,7 @@ import {
   ParaLarge,
 } from "./UpcomingRegistration";
 import { MeetupDetail } from "@/pages";
+import { CldImage } from "next-cloudinary";
 
 export function Welcome({
   pastTalks,
